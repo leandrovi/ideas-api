@@ -11,7 +11,9 @@ import { AppService } from './app.service';
       .forRoot({
         type: 'postgres',
         url: process.env.DATABASE_URL,
-        entities: [path.resolve(__dirname, '*/.entity{.ts,.js}')],
+        logging: true,
+        synchronize: true,
+        entities: [path.resolve(__dirname, '**/*.entity{.ts,.js}')],
       }),
   ],
   controllers: [AppController],
