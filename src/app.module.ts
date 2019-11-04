@@ -7,14 +7,13 @@ import { AppService } from './app.service';
 
 @Module({
   imports: [
-    TypeOrmModule
-      .forRoot({
-        type: 'postgres',
-        url: process.env.DATABASE_URL,
-        logging: true,
-        synchronize: true,
-        entities: [path.resolve(__dirname, '**/*.entity{.ts,.js}')],
-      }),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      url: process.env.DATABASE_URL,
+      logging: true,
+      synchronize: true,
+      entities: [path.resolve(__dirname, '**/*.entity{.ts,.js}')],
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
