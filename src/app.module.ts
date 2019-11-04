@@ -4,6 +4,7 @@ import * as path from 'path';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { IdeaModule } from './idea/idea.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { AppService } from './app.service';
       synchronize: true,
       entities: [path.resolve(__dirname, '**/*.entity{.ts,.js}')],
     }),
+    IdeaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
